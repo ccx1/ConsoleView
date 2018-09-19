@@ -12,4 +12,4 @@
 
 ### 暂时完成
 
-    <img src="./img/home.png" />
+    <img src="/ccx1/ConsoleView/img/home.png" />
