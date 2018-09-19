@@ -9,3 +9,7 @@
 1. react 
 2. redux
 3. ant
+
+### 暂时完成
+
+    <img src="./img/home.png" />
