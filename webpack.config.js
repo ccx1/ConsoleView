@@ -14,22 +14,62 @@ module.exports = {
     module: {
         rules: [{
             test: /\.js[x]?$/,
-            // include: path.resolve(__dirname, 'src'),
+            include: path.resolve(__dirname, 'src'),
             exclude: /node_modules/,
             loader: 'babel-loader?cacheDirectory',
             // query: {
             //     presets: ['env', 'react', "stage-1"]
             // }
-        }, {
-            test: /\.css$/,
-            loader: "style-loader!css-loader"
-        }],
+        },
+            {
+                test: /\.less$/,
+                use: [{
+                    loader: 'style-loader'
+                },
+                    {
+                        loader: 'css-loader'
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: [
+                                require('autoprefixer')({
+                                    browsers: [
+                                        '>1%',
+                                        'last 4 versions',
+                                        'Firefox ESR',
+                                        'not ie < 9' // React doesn't support IE8 anyway
+                                    ]
+                                })
+                            ]
+                        }
+                    },
+                    {
+                        loader: 'less-loader'
+                    }
+                ],
+                exclude: /\.useable\.less$/
+            },
+            {
+                test: /\.useable\.less$/,
+                use: [{
+                    loader: 'style-loader/useable'
+                },
+                    {
+                        loader: 'css-loader'
+                    },
+                    {
+                        loader: 'less-loader'
+                    }
+                ],
+                exclude: /node_modules/
+            }],
     },
     resolve: {
         extensions: ['.js', '.jsx'],
         modules: [path.resolve(__dirname, 'node_modules')]
     },
-    // devtool: 'eval-source-map',
+    devtool: 'eval-source-map',
     devServer: {
         contentBase: './dist',
         port: 8080,

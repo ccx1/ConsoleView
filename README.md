@@ -1,11 +1,11 @@
-### 基础包
+### 基于ant手写sdk控制台
 
  npm install
 
  npm run dev
 
-
-#### react 开发初期使用的基础包
+#### 使用
 
 1. react 
 2. redux
+3. ant

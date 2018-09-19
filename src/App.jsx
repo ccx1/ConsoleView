@@ -1,35 +1,21 @@
 import React from 'react';
 import {Component} from 'react';
 import {Provider} from 'react-redux';
-import {connect} from 'react-redux';
+import {LocaleProvider} from 'antd';
+import zhcn from 'antd/lib/locale-provider/zh_CN';
+import AppRoute from './AppRoute'
 
-class App extends Component {
-
-
-    constructor(props) {
-        super(props);
-        this.state = {}
-    }
-
-    onClickBack = () => {
-       console.log(this.props.state)
-    };
-
+export default class App extends Component {
 
     render() {
         return (
-            <Provider store={this.props.store}>
-                <div>
-                    <button onClick={this.onClickBack} value={"aaa"}/>
-                </div>
-            </Provider>
+            <LocaleProvider locale={zhcn}>
+                <Provider store={this.props.store}>
+                    <AppRoute/>
+                </Provider>
+            </LocaleProvider>
         );
     }
 }
 
-const mapStateToProps = state => {
-    return {state};
-};
-
-export default connect(mapStateToProps)(App);
 
