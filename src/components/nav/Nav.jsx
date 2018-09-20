@@ -9,45 +9,42 @@ const MenuItemGroup = Menu.ItemGroup;
 export default class Nav extends Component {
 
     handleClick = (e) => {
-        console.log('click ', e);
+        this.props.onMenuChange(e.key);
     };
 
 
     render() {
         return (
-            <div className="side-nav">
-                <Menu
-                    onClick={this.handleClick}
-                    defaultSelectedKeys={['1']}
-                    defaultOpenKeys={['sub1']}
-                    mode="inline"
-                >
-                    <SubMenu key="sub1" title={<span><Icon type="mail"/><span>Navigation One</span></span>}>
-                        <MenuItemGroup key="g1" title="Item 1">
-                            <Menu.Item key="1">Option 1</Menu.Item>
-                            <Menu.Item key="2">Option 2</Menu.Item>
-                        </MenuItemGroup>
-                        <MenuItemGroup key="g2" title="Item 2">
-                            <Menu.Item key="3">Option 3</Menu.Item>
-                            <Menu.Item key="4">Option 4</Menu.Item>
-                        </MenuItemGroup>
-                    </SubMenu>
-                    <SubMenu key="sub2" title={<span><Icon type="appstore"/><span>Navigation Two</span></span>}>
-                        <Menu.Item key="5">Option 5</Menu.Item>
-                        <Menu.Item key="6">Option 6</Menu.Item>
-                        <SubMenu key="sub3" title="Submenu">
-                            <Menu.Item key="7">Option 7</Menu.Item>
-                            <Menu.Item key="8">Option 8</Menu.Item>
+            <React.Fragment>
+                <div className="side-nav">
+                    <Menu
+                        onClick={this.handleClick}
+                        defaultSelectedKeys={[this.props.selectKey]}
+                        multiple={false}
+                        mode="inline"
+                    >
+                        <Menu.Item key="0"><Icon type="home" theme="outlined" />首页</Menu.Item>
+                        <SubMenu key="menu-app-manager" title={<span><Icon type="appstore" theme="outlined" /><span>应用管理</span></span>}>
+                            <Menu.Item key="1">App列表</Menu.Item>
+                            <Menu.Item key="2">广告位置管理</Menu.Item>
                         </SubMenu>
-                    </SubMenu>
-                    <SubMenu key="sub4" title={<span><Icon type="setting"/><span>Navigation Three</span></span>}>
-                        <Menu.Item key="9">Option 9</Menu.Item>
-                        <Menu.Item key="10">Option 10</Menu.Item>
-                        <Menu.Item key="11">Option 11</Menu.Item>
-                        <Menu.Item key="12">Option 12</Menu.Item>
-                    </SubMenu>
-                </Menu>
-            </div>
+                        <SubMenu key="sub2" title={<span><Icon type="appstore"/><span>SDK/API</span></span>}>
+                            <Menu.Item key="3">SDK下载</Menu.Item>
+                        </SubMenu>
+                        <SubMenu key="sub3" title={<span><Icon type="setting"/><span>报告</span></span>}>
+                            <Menu.Item key="4">每日数据</Menu.Item>
+                        </SubMenu>
+                        <SubMenu key="sub4" title={<span><Icon type="setting"/><span>财务管理</span></span>}>
+                            <Menu.Item key="5">账户管理</Menu.Item>
+                            <Menu.Item key="6">月度收益</Menu.Item>
+                            <Menu.Item key="7">付款记录</Menu.Item>
+                        </SubMenu>
+                        <SubMenu key="sub5" title={<span><Icon type="setting"/><span>设置</span></span>}>
+                            <Menu.Item key="8">基本信息</Menu.Item>
+                        </SubMenu>
+                    </Menu>
+                </div>
+            </React.Fragment>
         );
     }
 }

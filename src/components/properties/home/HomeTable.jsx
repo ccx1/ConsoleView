@@ -15,9 +15,9 @@ export default class HomeTable extends Component {
         return (
             <React.Fragment>
                 <div className="item-border">
-                    <div className={"title " + this.props.titleClass}>
+                    {this.props.title && <div className={"title " + this.props.titleClass}>
                         {this.props.title}
-                    </div>
+                    </div>}
                     <div className="sub-item">
 
                         <table>

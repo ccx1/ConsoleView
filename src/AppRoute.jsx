@@ -5,7 +5,6 @@ import {connect} from "react-redux";
 import HomePage from './page/home/homepage'
 import Header from './components/header/header'
 import Help from './page/help/Help'
-import Nav from './components/nav/Nav'
 import './common/common.less'
 
 class AppRoute extends React.Component {
@@ -19,17 +18,14 @@ class AppRoute extends React.Component {
                 <div className="page">
                     <Header/>
                     <div className="container">
-                        <Nav/>
-                        <div className="item-page">
-                            <Switch>
-                                <Route exact path="/" component={HomePage}/>
-                                <Route exact path="/home" component={HomePage}/>
-                                <Route exact path="/help" component={Help}/>
-                                <Route>
-                                    <Redirect to="/"/>
-                                </Route>
-                            </Switch>
-                        </div>
+                        <Switch>
+                            <Route exact path="/" component={HomePage}/>
+                            <Route exact path="/home" component={HomePage}/>
+                            <Route exact path="/help" component={Help}/>
+                            <Route>
+                                <Redirect to="/"/>
+                            </Route>
+                        </Switch>
                     </div>
                 </div>
             </Router>
