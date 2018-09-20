@@ -1,7 +1,7 @@
 import React from 'react';
 import {Component} from 'react';
 import {Select, Button, Table, Tag} from 'antd';
-import './AppManager.less'
+import './Location.less'
 
 const Option = Select.Option;
 
@@ -39,7 +39,7 @@ const columns = [{
 }];
 
 
-export default class AppManager extends Component {
+export default class Location extends Component {
 
 
     constructor(props) {
@@ -67,12 +67,30 @@ export default class AppManager extends Component {
             age: 32,
             address: 'Sidney No. 1 Lake Park',
             tags: ['cool', 'teacher'],
+        },{
+            key: '4',
+            name: 'John Brown',
+            age: 32,
+            address: 'New York No. 1 Lake Park',
+            tags: ['nice', 'developer'],
+        }, {
+            key: '5',
+            name: 'Jim Green',
+            age: 42,
+            address: 'London No. 1 Lake Park',
+            tags: ['loser'],
+        }, {
+            key: '6',
+            name: 'Joe Black',
+            age: 32,
+            address: 'Sidney No. 1 Lake Park',
+            tags: ['cool', 'teacher'],
         }];
 
         return (
             <React.Fragment>
                 <div className="home-page">
-                    应用管理
+                    位置管理
                 </div>
                 <div className="content">
                     <div>

@@ -26,7 +26,7 @@ export default class Nav extends Component {
                         <Menu.Item key="0"><Icon type="home" theme="outlined" />首页</Menu.Item>
                         <SubMenu key="menu-app-manager" title={<span><Icon type="appstore" theme="outlined" /><span>应用管理</span></span>}>
                             <Menu.Item key="1">App列表</Menu.Item>
-                            <Menu.Item key="2">广告位置管理</Menu.Item>
+                            <Menu.Item key="2">位置管理</Menu.Item>
                         </SubMenu>
                         <SubMenu key="sub2" title={<span><Icon type="appstore"/><span>SDK/API</span></span>}>
                             <Menu.Item key="3">SDK下载</Menu.Item>

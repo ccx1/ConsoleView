@@ -14,7 +14,7 @@ export default class HomeTable extends Component {
 
         return (
             <React.Fragment>
-                <div className="item-border">
+                <div className="item-border-home">
                     {this.props.title && <div className={"title " + this.props.titleClass}>
                         {this.props.title}
                     </div>}
@@ -28,7 +28,6 @@ export default class HomeTable extends Component {
                                         <td className="left-item">{item.leftItem}</td>
                                         <td className="right-item">{item.rightItem}</td>
                                     </tr>
-
                                 })
                             }
                             </tbody>

@@ -16,7 +16,7 @@ class Header extends Component {
         return (
             <div className="header">
                 <div className="logo-title cursor-pointer" onClick={this.homeClick}>
-                    MaxMobi 媒体方平台
+                    抄抄抄平台
                 </div>
 
                 <div className="header-menu">

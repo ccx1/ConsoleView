@@ -27,7 +27,7 @@ module.exports = {
                     loader: 'style-loader'
                 },
                     {
-                        loader: 'css-loader'
+                        loader: 'css-loader',
                     },
                     {
                         loader: 'postcss-loader',
@@ -75,7 +75,7 @@ module.exports = {
         port: 8080,
         hot: true,
         historyApiFallback: true,
-        host: '127.0.0.1',
+        host: '0.0.0.0',
         // open:true,
         disableHostCheck: true,
         headers: {
@@ -83,13 +83,13 @@ module.exports = {
         },
         proxy: {
             '/test/*': {
-                target: 'http://127.0.0.1:3001',
+                target: 'http://192.168.2.154:3001',
                 changeOrigin: true,
                 secure: false,
                 // 替换包含test的接口
-                pathRewrite: {
-                    '^/test/*': ''
-                }
+                // pathRewrite: {
+                //     '^/test/*': ''
+                // }
             }
         }
     },

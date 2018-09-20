@@ -4,6 +4,12 @@
 import config from '../conts/conf';
 import common from '../utils/common';
 
+export const getPresentationData = () =>(
+    common.requestInPromise({
+        url: config.requestUrl.getdata
+    })
+);
+
 
 /**
  * 生成jobCode

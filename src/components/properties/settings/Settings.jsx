@@ -49,6 +49,9 @@ export default class Settings extends Component {
             <div className="page-item-settings">
                 请尽可能的完善您的基本信息，好让我们能提供更好的服务。
             </div>
+            <div className="setting-table">
+
+
             <table>
                 <tbody>
                 {
@@ -63,6 +66,7 @@ export default class Settings extends Component {
                 }
                 </tbody>
             </table>
+            </div>
 
             <div className="item-border item-right-div">
                 <div>
