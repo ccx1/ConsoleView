@@ -6,6 +6,7 @@
   ],
   "plugins": [
     "react-hot-loader/babel",
+    // 识别ant的css
     ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": true }]
   ]
 }

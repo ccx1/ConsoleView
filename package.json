@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --hot --inline --colors --content-base",
     "build": "webpack --progress --colors",
+    "buildp": "cross-env NODE_ENV=production webpack --config webpack.config.js",
     "devBuild": "cross-env NODE_ENV=production webpack --config webpack.config.js",
     "dev": "webpack-dev-server"
   },
@@ -42,6 +43,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "cross-env": "^5.1.4",
     "css-loader": "^0.28.11",
     "html-webpack-plugin": "^3.2.0",
     "jade-loader": "^0.8.0",
